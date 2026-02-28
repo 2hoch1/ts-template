@@ -19,7 +19,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "type-check": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
     "lint": "eslint src tests",
     "lint:fix": "eslint src tests --fix",
     "format": "prettier --write \"src/**/*.{ts,tsx,mts}\" \"tests/**/*.{ts,tsx,mts}\" \"*.{json,md,yml,yaml}\" \".github/**/*.{yml,yaml,json,md}\"",

@@ -17,8 +17,8 @@ npm run build
 # Lint
 npm run lint
 
-# Type-check
-npm run type-check
+# Typecheck
+npm run typecheck
 ```
 
 ## Scripts
@@ -29,7 +29,7 @@ npm run type-check
 | `npm test`              | Run tests with Vitest               |
 | `npm run test:watch`    | Run tests in watch mode             |
 | `npm run test:coverage` | Run tests with coverage report      |
-| `npm run type-check`    | Type-check without emitting         |
+| `npm run typecheck`     | Typecheck without emitting          |
 | `npm run lint`          | Run ESLint                          |
 | `npm run lint:fix`      | Run ESLint with auto-fix            |
 | `npm run format`        | Format with Prettier                |
