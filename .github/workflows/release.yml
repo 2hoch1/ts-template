@@ -17,8 +17,8 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  verify:
-    name: Verify
+  test:
+    name: Test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -47,10 +47,13 @@ jobs:
         run: npm run build
 
   release:
-    name: Semantic Release
+    name: Release
     runs-on: ubuntu-latest
-    needs: verify
+    needs: test
     if: github.ref == 'refs/heads/main'
+    outputs:
+      new_release_published: ${{ steps.release.outputs.new_release_published }}
+      new_release_version: ${{ steps.release.outputs.new_release_version }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -67,8 +70,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Release
+      - name: Create release
+        id: release
         uses: cycjimmy/semantic-release-action@v6
+        with:
+          branch: main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
