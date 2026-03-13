@@ -1,4 +1,6 @@
-module.exports = {
+import type { UserConfig } from '@commitlint/types'
+
+const Configuration: UserConfig = {
   extends: ['@commitlint/config-conventional'],
   rules: {
     'header-max-length': [2, 'always', 72],
@@ -26,3 +28,5 @@ module.exports = {
     'subject-exclamation-mark': [0],
   },
 }
+
+export default Configuration
