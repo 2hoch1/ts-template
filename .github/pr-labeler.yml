@@ -44,7 +44,7 @@ build:
           - .editorconfig
           - .gitignore
           - .gitattributes
-          - .commitlintrc.cjs
+          - .commitlintrc.ts
           - vitest.config.ts
 chore:
   - changed-files:
