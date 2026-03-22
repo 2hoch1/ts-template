@@ -27,6 +27,6 @@
     "sourceMap": true,
     "paths": { "@/*": ["./src/*"] }
   },
-  "include": ["src"],
+  "include": ["src", "tests", "vitest.config.ts", ".commitlintrc.ts"],
   "exclude": ["node_modules", "dist"]
 }
